@@ -34,6 +34,10 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        for asteroid in asteroids:
+            if asteroid.check_collision(player):
+                exit()
+
         screen.fill("black")
 
         updatable.update(dt)
